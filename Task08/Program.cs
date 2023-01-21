@@ -17,7 +17,7 @@ if (number < 0)
 else
 {
     int count = 1;
-    if (count % 2 == 1)
+    if (count % 2 == 1) //чтобы не была запятая перед первым четным числом, если первое число от которого идет отчет - нечетное(как в нашем случае)
     count++;
     while (count < number)
         if (count % 2 == 0)
@@ -31,7 +31,7 @@ else
             Console.Write(", ");
             count++;
         }
-    if (count == number)
+    if (count == number) //Это также для того чтобы в конце не была запятая
         if (count % 2 == 0)
         {
             Console.WriteLine($"{count}");

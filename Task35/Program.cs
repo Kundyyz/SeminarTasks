@@ -47,4 +47,4 @@ int Quantity(int[] arr)
 int[] array = CreateArray(10, -100, 100);
 int quantity = Quantity(array);
 PrintArray(array);
-Console.Write($" -> {quantity} ");
+Console.WriteLine($" -> {quantity} ");

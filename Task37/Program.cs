@@ -17,15 +17,36 @@ int[] CreateArray(int size, int min, int max)
     }
     return array;
 }
-void PrintArray(int[] array)
-
+void PrintArray(int[] arr)
 {
     Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
-        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
-        else Console.Write($"{array[i]}");
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        else Console.Write($"{arr[i]}");
     }
 
-    Console.Write("]");
+    Console.Write("]   ");
 }
+
+int[] Product(int[] arr)
+{
+    int newSize = arr.Length / 2;
+    if (arr.Length % 2 == 1) newSize += 1;
+    int[] arrayNew = new int[newSize];
+    for (int i = 0; i < newSize; i++)
+    {
+        arrayNew[i] = arr[i] * arr[arr.Length - 1 - i];
+    }
+    if (arr.Length % 2 == 1) arrayNew[arrayNew.Length - 1] = arr[arr.Length / 2];
+    return arrayNew;
+}
+
+int[] array = CreateArray(9, -19, 15);
+int[] productPairElem = Product(array);
+PrintArray(array);
+PrintArray(productPairElem);
+
+
+
+

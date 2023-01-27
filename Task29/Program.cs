@@ -13,15 +13,26 @@ int[] GenerateArray(int size, int min, int max)
     return arr;
 }
 
-int[] PrintArray(int[] arr)
-{
+void PrintArray(int[] arr)
+{  
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write($"{arr[i]} ");
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        else Console.Write($"{arr[i]} -> ");
     }
-   return Console.Write();
 }
 
-int[] array = GenerateArray(10, 0, 88);
-int[] generatedArray = PrintArray(array);
-Console.WriteLine($"{generatedArray} -> [{generatedArray}]");
+void PrintArray2(int[] arr)
+{
+    Console.Write("[");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        else Console.Write($"{arr[i]}");
+    }
+    Console.WriteLine("]");
+}
+
+int[] array = GenerateArray(8, 0, 50);
+PrintArray(array);
+PrintArray2(array);

@@ -30,11 +30,11 @@ int Sum(int[] array)
     int sum = 0;
     for (int i = 0; i < array.Length; i++)
     {
-     if (i % 2 == 1)
-     {
-      sum += array[i];
-     }
-    } 
+        if (i % 2 == 1)
+        {
+            sum += array[i];
+        }
+    }
     return sum;
 }
 Console.WriteLine("Укажите длину массива:");

@@ -30,11 +30,11 @@ bool FindNumber(int[] array, int find)
 {
     for (int i = 0; i < array.Length; i++)
     {
-     if (array[i] == find)
-     {
-      return true;
-     }
-    } 
+        if (array[i] == find)
+        {
+            return true;
+        }
+    }
     return false;
 }
 Console.WriteLine("Укажите длину массива:");

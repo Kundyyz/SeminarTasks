@@ -10,10 +10,10 @@ Power(a, b);
 void Power(int A, int B)
 {
     int pow = A;
-if (B<0) Console.WriteLine("B - ненатуральное число!");
-else for (int i = 1; i < B; i++)
-{
-    pow *= A;
-}
-Console.WriteLine ($"{A}, {B} -> {pow}");
+    if (B < 0) Console.WriteLine("B - ненатуральное число!");
+    else for (int i = 1; i < B; i++)
+        {
+            pow *= A;
+        }
+    Console.WriteLine($"{A}, {B} -> {pow}");
 }

@@ -9,7 +9,7 @@ double[] CreateArray(int size, int min, int max)
     Random rnd = new Random();
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = Math.Round(rnd.NextDouble()*(max-min)+min, 1);
+        arr[i] = Math.Round(rnd.NextDouble() * (max - min) + min, 1);
     }
     return arr;
 }
@@ -28,16 +28,16 @@ double Difference(double[] arr)
 {
     double diff = 0;
     double max = arr[0];
-    double min = arr[0]; 
+    double min = arr[0];
     for (int i = 0; i < arr.Length; i++)
     {
-     if (arr[i] > max)
-     {
-      max = arr[i];
-     }
-     else if (arr[i] < min)
-     min = arr[i];
-    } 
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+        else if (arr[i] < min)
+            min = arr[i];
+    }
     diff = max - min;
     return diff;
 }
@@ -45,4 +45,4 @@ double Difference(double[] arr)
 double[] array = CreateArray(8, 1, 10);
 PrintArray(array);
 double difference = Difference(array);
-Console.WriteLine($" ->  {Math.Round(difference,1)}");
+Console.WriteLine($" ->  {Math.Round(difference, 1)}");

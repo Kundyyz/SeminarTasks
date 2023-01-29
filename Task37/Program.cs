@@ -26,7 +26,7 @@ void PrintArray(int[] arr)
         else Console.Write($"{arr[i]}");
     }
 
-    Console.Write("]   ");
+    Console.WriteLine("]   ");
 }
 
 int[] Product(int[] arr)

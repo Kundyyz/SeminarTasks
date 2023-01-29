@@ -3,12 +3,17 @@
 // 2, 4 -> 16
 
 Console.WriteLine("Введите два числа");
-int A = Convert.ToInt32(Console.ReadLine());
-int B = Convert.ToInt32(Console.ReadLine());
-Power();
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+Power(a, b);
 
-void Power()
+void Power(int A, int B)
 {
+    int pow = A;
 if (B<0) Console.WriteLine("B - ненатуральное число!");
-else Console.WriteLine ($"{A}, {B} -> {Math.Pow(A, B)}");
+else for (int i = 1; i < B; i++)
+{
+    pow *= A;
+}
+Console.WriteLine ($"{A}, {B} -> {pow}");
 }

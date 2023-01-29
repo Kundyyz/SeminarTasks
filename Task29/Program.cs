@@ -18,21 +18,13 @@ void PrintArray(int[] arr)
     for (int i = 0; i < arr.Length; i++)
     {
         if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
-        else Console.Write($"{arr[i]} -> ");
+        else Console.Write($"{arr[i]}");
     }
 }
 
-void PrintArray2(int[] arr)
-{
-    Console.Write("[");
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
-        else Console.Write($"{arr[i]}");
-    }
-    Console.WriteLine("]");
-}
 
 int[] array = GenerateArray(8, 0, 50);
 PrintArray(array);
-PrintArray2(array);
+Console.Write("  -> [");
+PrintArray(array);
+Console.WriteLine("]");

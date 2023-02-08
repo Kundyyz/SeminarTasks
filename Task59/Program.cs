@@ -58,11 +58,6 @@ int MinNumber (int[,] matrix, int min)
     return minIndexI;
 }
 
-// int[,] NewMatrix (int[,] matrix);
-// {
-//      int[,] matrix = new int[matrix.GetLength(0)-1, matrix.GetLength(1)-1];
-
-// }
 
 
 int[,] array2D = CreateMatrixRndInt(3, 4, -15, 10);

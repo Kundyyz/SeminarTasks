@@ -31,10 +31,9 @@ void PrintMatrix(int[,] matrix)
 
 void NewMatrix(int[,] matrix)
 {
-    int tmp = 0;
     for (int i = 0; i < matrix.GetLength(1); i++)
     {
-        tmp = matrix[0, i];
+        int tmp = matrix[0, i];
         matrix[0, i] = matrix[matrix.GetLength(0) - 1, i];
         matrix[matrix.GetLength(0) - 1, i] = tmp;
     }

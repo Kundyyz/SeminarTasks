@@ -51,7 +51,7 @@ int[] SumOfRows(int[,] matrix)
     }
     return sumRows;
 }
-void PrintArray(int[] arr)
+void PrintArray(int[] arr) //для наглядности
 {
     for (int i = 0; i < arr.Length; i++)
     {

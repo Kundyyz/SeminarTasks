@@ -40,27 +40,50 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int MinNumber (int[,] matrix, int min)
+int[] MinIndexElementsMatrix(int[,] matrix)
 {
-    int minNum = min;
-    int  minIndexI = 0; 
-           int  minIndexJ = 0;
-        for (int i = 0; i < matrix.GetLength(0); i++)
+    int min = matrix[0, 0];
+    int[] arrayIndexMin = new int[2];
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (matrix[i,j] < minNum)
-            minNum = matrix[i,j];
-            minIndexI = i; 
-           minIndexJ = j; 
+            if (matrix[i, j] < min)
+            {
+                min = matrix[i, j];
+                arrayIndexMin[0] = i;
+                arrayIndexMin[1] = j;
+            }
         }
     }
-    return minIndexI;
+
+    return arrayIndexMin;
 }
 
+int[,] MatrixWithoutRowColMinElements(int[,] matrix, int[] minIndex)
+{
+    int[,] matrixWithoutElem = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
+    int m = 0, n = 0;
 
+    for (int i = 0; i < matrixWithoutElem.GetLength(0); i++)
+    {
+        if (m == minIndex[0]) m++;
 
-int[,] array2D = CreateMatrixRndInt(3, 4, -15, 10);
+        for (int j = 0; j < matrixWithoutElem.GetLength(1); j++)
+        {
+            if (n == minIndex[1]) n++;
+            matrixWithoutElem[i, j] = matrix[m, n];
+            n++;
+        }
+        n = 0;
+        m++;
+    }
+    return matrixWithoutElem;
+}
+
+int[,] array2D = CreateMatrixRndInt(4, 4, 0, 10);
 PrintMatrix(array2D);
-int minimumNumber = MinNumber(array2D, -15);
-Console.WriteLine(minimumNumber);
+Console.WriteLine();
+int[] arrayMinIndexElem = MinIndexElementsMatrix(array2D);
+int[,] array2DWithOutElementsMin = MatrixWithoutRowColMinElements(array2D, arrayMinIndexElem);
+PrintMatrix(array2DWithOutElementsMin);

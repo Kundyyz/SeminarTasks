@@ -10,9 +10,9 @@ int number = Convert.ToInt32(Console.ReadLine());
 if (number < 0)
     Console.WriteLine("Число не натуральное");
 else
-    Console.Write($"N = {number} -> ' ");
+    Console.Write($"N = {number} -> '' ");
 NaturalNumbers(number);
-Console.WriteLine("'");
+Console.WriteLine("''");
 
 void NaturalNumbers(int num)
 {
